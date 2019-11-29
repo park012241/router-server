@@ -7,6 +7,7 @@ export type Config = Record<string, string>;
 export enum NodeEnv {
   development = 'development',
   production = 'production',
+  testing = 'test',
 }
 
 @Injectable()
@@ -37,7 +38,7 @@ export class ConfigService {
     });
     const validateResult: ValidationError[] = validateSync(this);
     if (validateResult.length > 0) {
-      throw validateResult;
+      throw new Error(validateResult[0].toString());
     }
   }
 }
