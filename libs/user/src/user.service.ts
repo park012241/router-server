@@ -30,6 +30,10 @@ export class UserService {
         username: 'admin',
       });
     }
+    await this.users.createIndex('username', {
+      name: 'User Name',
+      unique: true,
+    });
     return this;
   }
 

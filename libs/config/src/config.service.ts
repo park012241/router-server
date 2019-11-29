@@ -25,6 +25,9 @@ export class ConfigService {
   @IsString()
   public readonly HOST: string;
 
+  @IsString()
+  public readonly JWT_SECRET: string;
+
   constructor(customConf?: Config) {
     env();
     Object.assign(this, {
@@ -33,6 +36,7 @@ export class ConfigService {
     });
     Object.assign(this, {
       HOST: this.HOST || '0.0.0.0',
+      JWT_SECRET: this.JWT_SECRET || 'SLoWMoTIoN',
       NODE_ENV: this.NODE_ENV || NodeEnv.development,
       PORT: this.PORT || '3000',
     });

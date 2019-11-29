@@ -16,6 +16,8 @@
     "@app/mongo/(.*)": "<rootDir>/../libs/mongo/src/$1",
     "@app/mongo": "<rootDir>/../libs/mongo/src",
     "@app/user/(.*)": "<rootDir>/../libs/user/src/$1",
-    "@app/user": "<rootDir>/../libs/user/src"
+    "@app/user": "<rootDir>/../libs/user/src",
+    "@app/json-web-token/(.*)": "<rootDir>/../libs/json-web-token/src/$1",
+    "@app/json-web-token": "<rootDir>/../libs/json-web-token/src"
   }
 }

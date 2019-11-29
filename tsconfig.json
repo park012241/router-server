@@ -19,6 +19,9 @@
       ],
       "@app/user": [
         "libs/user/src"
+      ],
+      "@app/json-web-token": [
+        "libs/json-web-token/src"
       ]
     }
   },
