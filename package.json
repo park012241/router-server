@@ -85,7 +85,9 @@
       "@app/json-web-token/(.*)": "<rootDir>/libs/json-web-token/src/$1",
       "@app/json-web-token": "<rootDir>/libs/json-web-token/src",
       "@app/ssh/(.*)": "<rootDir>/libs/ssh/src/$1",
-      "@app/ssh": "<rootDir>/libs/ssh/src"
+      "@app/ssh": "<rootDir>/libs/ssh/src",
+      "@app/router/(.*)": "<rootDir>/libs/router/src/$1",
+      "@app/router": "<rootDir>/libs/router/src"
     }
   }
 }

@@ -46,6 +46,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/ssh/tsconfig.lib.json"
       }
+    },
+    "router": {
+      "type": "library",
+      "root": "libs/router",
+      "entryFile": "index",
+      "sourceRoot": "libs/router/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/router/tsconfig.lib.json"
+      }
     }
   },
   "compilerOptions": {

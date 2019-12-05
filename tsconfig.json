@@ -26,8 +26,8 @@
       "@app/ssh": [
         "libs/ssh/src"
       ],
-      "@app/ssh/*": [
-        "libs/ssh/src/*"
+      "@app/router": [
+        "libs/router/src"
       ]
     }
   },

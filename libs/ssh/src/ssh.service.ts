@@ -14,6 +14,7 @@ export interface IExecResult {
 export class SshService {
   private readonly client: Client;
   private readonly sshConfig: ConnectConfig;
+  private readonly isRoot: boolean;
   private newLine = Buffer.from('\n');
 
   constructor(private readonly config: ConfigService) {
@@ -21,15 +22,16 @@ export class SshService {
     this.sshConfig = {
       host: config.SSH_HOST,
       password: config.SSH_PASS,
-      port: parseInt(config.PORT, 10),
+      port: parseInt(config.SSH_PORT, 10),
       username: config.SSH_USER,
     };
+    this.isRoot = config.SSH_USER === 'root';
   }
 
   public execute(command: string): Promise<IExecResult> {
     return new Promise((resolve, reject) => {
       this.client.on('ready', () => {
-        this.client.exec(command, (err, stream) => {
+        this.client.exec(`${!this.isRoot && 'sudo '}${command}`, (err, stream) => {
           const result: IExecResult = {
             exitCode: 0,
             signal: 0,
@@ -43,6 +45,9 @@ export class SshService {
           stream.on('close', (code, signal) => {
             result.exitCode = code;
             result.signal = signal;
+            if (result.stderr.length > 0) {
+              reject(new Error(result.stderr.toString()));
+            }
             resolve(result);
           }).on('data', (data) => {
             result.stdout = Buffer.concat([result.stdout, this.newLine, data]);
