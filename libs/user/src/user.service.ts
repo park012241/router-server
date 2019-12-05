@@ -37,7 +37,7 @@ export class UserService {
     return this;
   }
 
-  private async addUser(user: User): Promise<void> {
+  public async addUser(user: User): Promise<void> {
     await validateOrReject(user);
     await this.users.insertOne(user);
   }

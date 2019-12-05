@@ -11,7 +11,6 @@ async function bootstrap() {
       .setTitle('Router APIs')
       .setDescription('SLoWMoTIoN Router API description')
       .setVersion(process.env.npm_package_version)
-      .setContactEmail('admin@slowmotion.dev')
       .build();
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('api', app, document);
