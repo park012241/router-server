@@ -37,6 +37,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/json-web-token/tsconfig.lib.json"
       }
+    },
+    "ssh": {
+      "type": "library",
+      "root": "libs/ssh",
+      "entryFile": "index",
+      "sourceRoot": "libs/ssh/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/ssh/tsconfig.lib.json"
+      }
     }
   },
   "compilerOptions": {

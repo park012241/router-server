@@ -28,17 +28,29 @@ export class ConfigService {
   @IsString()
   public readonly JWT_SECRET: string;
 
+  @IsString()
+  public readonly SSH_HOST: string;
+
+  @IsNumberString()
+  public readonly SSH_PORT: string;
+
+  @IsString()
+  public readonly SSH_USER: string;
+
+  @IsString()
+  public readonly SSH_PASS: string;
+
   constructor(customConf?: Config) {
     env();
     Object.assign(this, {
+      ...{
+        HOST: '0.0.0.0',
+        JWT_SECRET: 'SLoWMoTIoN',
+        NODE_ENV: NodeEnv.development,
+        PORT: '3000',
+      },
       ...process.env,
       ...customConf,
-    });
-    Object.assign(this, {
-      HOST: this.HOST || '0.0.0.0',
-      JWT_SECRET: this.JWT_SECRET || 'SLoWMoTIoN',
-      NODE_ENV: this.NODE_ENV || NodeEnv.development,
-      PORT: this.PORT || '3000',
     });
     const validateResult: ValidationError[] = validateSync(this);
     if (validateResult.length > 0) {

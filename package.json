@@ -33,6 +33,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",
+    "ssh2": "^0.8.7",
     "swagger-ui-express": "^4.1.2"
   },
   "devDependencies": {
@@ -45,6 +46,7 @@
     "@types/jsonwebtoken": "^8.3.5",
     "@types/mongodb": "^3.3.11",
     "@types/node": "^12.7.5",
+    "@types/ssh2": "^0.5.39",
     "@types/supertest": "^2.0.8",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
@@ -81,7 +83,9 @@
       "@app/user/(.*)": "<rootDir>/libs/user/src/$1",
       "@app/user": "<rootDir>/libs/user/src",
       "@app/json-web-token/(.*)": "<rootDir>/libs/json-web-token/src/$1",
-      "@app/json-web-token": "<rootDir>/libs/json-web-token/src"
+      "@app/json-web-token": "<rootDir>/libs/json-web-token/src",
+      "@app/ssh/(.*)": "<rootDir>/libs/ssh/src/$1",
+      "@app/ssh": "<rootDir>/libs/ssh/src"
     }
   }
 }

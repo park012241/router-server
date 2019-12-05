@@ -22,6 +22,12 @@
       ],
       "@app/json-web-token": [
         "libs/json-web-token/src"
+      ],
+      "@app/ssh": [
+        "libs/ssh/src"
+      ],
+      "@app/ssh/*": [
+        "libs/ssh/src/*"
       ]
     }
   },
